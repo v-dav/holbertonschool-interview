@@ -20,7 +20,8 @@ def canUnlockAll(boxes):
 
     checked_boxes = [0]
     boxes_length = len(boxes)
-
+    
+    # The checking
     for box_index in checked_boxes:
         for key in boxes[box_index]:
             if key not in range(boxes_length):
@@ -29,34 +30,7 @@ def canUnlockAll(boxes):
                 checked_boxes.append(key)
                 boxes_status[key] = True
 
-
-####################
-
-    # for i in range(boxes_length):
-    #     if i not in checked_keys:
-    #         continue
-    #     boxes_status[i] = True
-    #     nbKeysPerBox = len(boxes[i])
-    #     for j in range(nbKeysPerBox):
-    #         key = boxes[i][j]
-    #         if (key not in range(boxes_length)) or (key in checked_keys):
-    #             continue
-    #         elif not boxes[key]:
-    #             boxes_status[key] = True
-    #             continue
-    #         else:
-    #             checked_keys.append(key)
-    #             i = key
-    #             break
-
     # Check if some boxes are still closed
     if False in boxes_status:
         return False
-
     return True
-
-    # print(boxes_status)
-    # print(checked_boxes)
-
-# boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
-# canUnlockAll(boxes)
