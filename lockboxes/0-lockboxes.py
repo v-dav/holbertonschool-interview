@@ -18,16 +18,16 @@ def canUnlockAll(boxes):
         boxes_status.append(False)
     boxes_status[0] = True
 
-    checked_boxes = [0]
+    opened_boxes = [0]
     boxes_length = len(boxes)
 
     # The checking
-    for box in checked_boxes:
+    for box in opened_boxes:
         for key in boxes[box]:
             if key not in range(boxes_length):
                 continue
-            elif key not in checked_boxes:
-                checked_boxes.append(key)
+            elif key not in opened_boxes:
+                opened_boxes.append(key)
                 boxes_status[key] = True
 
     # Check if some boxes are still closed
