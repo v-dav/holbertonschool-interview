@@ -21,7 +21,7 @@ def canUnlockAll(boxes):
     opened_boxes = [0]
     boxes_length = len(boxes)
 
-    # The checking
+    # The checking: looping through opened boxes NOT on original array
     for box in opened_boxes:
         for key in boxes[box]:
             if key not in range(boxes_length):
