@@ -22,8 +22,8 @@ def canUnlockAll(boxes):
     boxes_length = len(boxes)
     
     # The checking
-    for box_index in checked_boxes:
-        for key in boxes[box_index]:
+    for box in checked_boxes:
+        for key in boxes[box]:
             if key not in range(boxes_length):
                 continue
             elif key not in checked_boxes:
