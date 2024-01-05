@@ -34,3 +34,6 @@ def canUnlockAll(boxes):
     if False in boxes_status:
         return False
     return True
+
+# Time complexity: O(N + M) because it loops on each box in the worst case and it checks each key in the corresponding box
+# Space complexity: O(N) because we create a list proportional in size to the original array
