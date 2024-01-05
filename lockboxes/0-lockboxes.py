@@ -20,7 +20,7 @@ def canUnlockAll(boxes):
 
     checked_boxes = [0]
     boxes_length = len(boxes)
-    
+
     # The checking
     for box in checked_boxes:
         for key in boxes[box]:
