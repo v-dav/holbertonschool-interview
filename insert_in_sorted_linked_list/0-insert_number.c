@@ -6,6 +6,9 @@
  * @number: integer to be included in the new node
  *
  * Return: address of the new list or NULL if it fails
+ *
+ * Time complexity: O(n)
+ * Space complexity: O(1)
  */
 listint_t *insert_node(listint_t **head, int number)
 {
@@ -14,17 +17,21 @@ listint_t *insert_node(listint_t **head, int number)
 
 	if (new == NULL)
 		return (NULL);
+
 	new->n = number;
 	new->next = NULL;
+
 	if (*head == NULL || (current->n > new->n))
 	{
 		new->next = current;
 		*head = new;
 		return (new);
 	}
+
 	while (current->next != NULL && current->next->n < new->n)
 		current = current->next;
 	new->next = current->next;
 	current->next = new;
 	return (new);
+
 }
