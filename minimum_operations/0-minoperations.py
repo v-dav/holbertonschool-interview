@@ -2,13 +2,13 @@
 """A minimal operations algorithm"""
 
 
-def find(number):
+def minOperations(n):
     """An algorithm that defines the minimum amount of ops"""
     res = 0
     i = 2
-    while i <= number:
-        while number % i == 0:
+    while i <= n:
+        while n % i == 0:
             res += i
-            number = number // i
+            n = n // i
         i += 1
     return res
