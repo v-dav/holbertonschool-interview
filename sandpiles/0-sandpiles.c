@@ -53,6 +53,8 @@ void toppling(int grid1[3][3])
 {
 	int i, j;
 
+	int grid_temp[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
@@ -60,21 +62,22 @@ void toppling(int grid1[3][3])
 			if (grid1[i][j] > 3)
 			{
 				if (i - 1 >= 0)
-					grid1[i - 1][j]++;
+					grid_temp[i - 1][j]++;
 
 				if (j - 1 >= 0)
-					grid1[i][j - 1]++;
+					grid_temp[i][j - 1]++;
 
 				if (j + 1 < 3)
-					grid1[i][j + 1]++;
+					grid_temp[i][j + 1]++;
 
 				if (i + 1 < 3)
-					grid1[i + 1][j]++;
+					grid_temp[i + 1][j]++;
 
 				grid1[i][j] = grid1[i][j] - 4;
 			}
 		}
 	}
+	add_matrix(grid1, grid_temp);
 }
 /**
  * sandpiles_sum - Computes sum of two 3x3 stable sandpiles
