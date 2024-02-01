@@ -28,6 +28,11 @@ When the `sandpiles_sum` function is called, it computes the sum of two sandpile
 
 The stability of the sandpile is maintained by toppling any cell that contains more than 3 grains. The process is repeated until the sandpile becomes stable.
 
+## 👨🏼‍🏫 Whiteboard
+
+![Skärmavbild 2024-02-01 kl  15 10 14](https://github.com/v-dav/holbertonschool-interview/assets/115344057/8aa961c8-a790-4c0a-a203-019e6d4160a0)
+
+
 ## 🧑🏼‍💻 Usage
 
 You can use the function in your C program as follows:
