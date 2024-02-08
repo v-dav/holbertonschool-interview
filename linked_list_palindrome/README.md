@@ -189,6 +189,11 @@ Linked list is a palindrome
 carrie@ubuntu:0x03$
 ```
 
+## 🧑🏼‍💻 Leetcode
+
+![Skärmavbild 2024-02-08 kl  16 03 59](https://github.com/v-dav/holbertonschool-interview/assets/115344057/6ed30d2d-5692-4c17-866d-d7f54426c535)
+
+
 ##  🙇 Author
 
 [Vladimir Davidov](https://github.com/v-dav) - Holberton School
