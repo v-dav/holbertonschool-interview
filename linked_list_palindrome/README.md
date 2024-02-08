@@ -2,14 +2,14 @@
 
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 
-![image](https://github.com/v-dav/holbertonschool-interview/assets/115344057/82153c60-5f8d-4bbf-ae31-0b0277a2c754)
+![Skärmavbild 2024-02-08 kl  12 48 35](https://github.com/v-dav/holbertonschool-interview/assets/115344057/4f099ae1-3a1c-447e-97af-0cb1e5f0a15f)
 
 
 ## 🧐 Project Overview
 
 Welcome to the "Linked List is a Palindrome" algorithm project! In this project, we explore an algorithmic problem related to linked lists. The goal is to determine whether a given linked list is a palindrome or not. This involves checking if the sequence of elements in the linked list reads the same backward as forward.
 
-##  Problem description
+## 🧐 Problem description
 Given a linked list, implement a function is_palindrome that returns True if the linked list is a palindrome, and False otherwise. An empty list is considered a palindrome.
 
 ## 🎓 Prototype and example
@@ -21,7 +21,7 @@ int is_palindrome(listint_t **head);
 
 ## 👨🏼‍🏫 Whiteboard
 
-![Skärmavbild 2024-02-01 kl  15 10 14](https://github.com/v-dav/holbertonschool-interview/assets/115344057/8aa961c8-a790-4c0a-a203-019e6d4160a0)
+![Untitled-2024-02-01-1118](https://github.com/v-dav/holbertonschool-interview/assets/115344057/a69b363d-907b-4e76-a616-c8d400408891)
 
 
 ## 🧑🏼‍💻 Usage
