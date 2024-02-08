@@ -19,7 +19,7 @@ int is_palindrome(listint_t **head)
 	 * Find the middle of the list with "slow" by
 	 * Floyd's Cycle Detection Algorithm
 	 */
-	while (slow && fast->next->next)
+	while (slow && fast->next && fast->next->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
