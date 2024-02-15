@@ -2,6 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-Algorithms-blue?style=for-the-badge&logo=python&logoColor=white)
 
+![1356089c-b0ea-475f-a30e-e5507ac04cc9](https://github.com/v-dav/holbertonschool-interview/assets/115344057/ef9f666c-1716-4a59-ae5f-bb0a93caafbd)
 
 
 ## 🧐 Project Overview
