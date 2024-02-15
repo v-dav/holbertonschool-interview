@@ -1,27 +1,30 @@
 #!/usr/bin/python3
 
-""" A Log Parser Script that reads the sdtin and print some metrics """
+""" script qui lit l'entrée standard ligne par ligne et calcule des métriques """
+# Ceci est une docstring qui décrit ce que fait le script
 
 import signal
 import sys
+
+# Importation du module sys pour accéder à l'entrée standard
 
 # Global variables
 loop_counter = 0
 stats = {}
 file_size_counter = 0
 
-
-# The function to print stats
 def printer():
-    """ Printer function """
+    """ Affiche les informations nécessaires """
+    # Ceci est une fonction qui affiche les informations
+    
     print(f"File size: {file_size_counter}")
     for k, v in dict(sorted(stats.items())).items():
         print(f"{k}: {v}")
 
 
-# Ctrl-C signal handler
 def ctrlc_handler(signal, frame):
-    """ Handler function """
+    """ Handler function that detects the signal"""
+    # Ctrl-C signal handler that handles Ctrl
     printer()
 
 
