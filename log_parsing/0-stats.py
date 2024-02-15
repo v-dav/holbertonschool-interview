@@ -10,6 +10,7 @@ loop_counter = 0
 stats = {}
 file_size_counter = 0
 
+
 def printer():
     """ Affiche les informations nécessaires """
 
@@ -39,6 +40,5 @@ for line in sys.stdin:
         stats[status_code] = 1
 
     file_size_counter += file_size
-
-    if loop_counter % 10 == 0:
+    if loop_counter % 10 == 0 or loop_counter < 10:
         printer()
