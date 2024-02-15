@@ -6,14 +6,15 @@ import signal
 import sys
 
 
+# Global variables to store data
 loop_counter = 0
 stats = {}
 file_size_counter = 0
 
 
+# Printer function
 def printer():
-    """ Affiche les informations nécessaires """
-
+    """ Prints formatted output as exepcted """
     print("File size: {}".format(file_size_counter))
     for k, v in sorted(stats.items()):
         print("{}: {}".format(k, v))
@@ -41,7 +42,10 @@ for line in sys.stdin:
             stats[status_code] += 1
         else:
             stats[status_code] = 1
+    except Exception:
+        pass
 
+    try:
         file_size = int(line_list[-1])
         file_size_counter += file_size
     except Exception:
@@ -50,5 +54,6 @@ for line in sys.stdin:
     if loop_counter % 10 == 0 or line == "":
         printer()
 
+# Case when file is empty and print restant info
 if loop_counter == 0 or loop_counter % 10 != 0:
     printer()
