@@ -42,5 +42,8 @@ for line in sys.stdin:
         stats[status_code] = 1
 
     file_size_counter += file_size
-    if loop_counter % 10 == 0 or loop_counter < 10:
+    if loop_counter % 10 == 0 or line == "":
         printer()
+
+if loop_counter % 10 != 0:
+    printer()
