@@ -41,13 +41,13 @@ for line in sys.stdin:
             stats[status_code] += 1
         else:
             stats[status_code] = 1
-    except (e):
+    except Exception:
         pass
 
     try:
         file_size = int(line_list[-1])
         file_size_counter += file_size
-    except (e):
+    except Exception:
         pass
 
     if loop_counter % 10 == 0 or line == "":
