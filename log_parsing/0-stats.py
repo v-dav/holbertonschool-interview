@@ -28,29 +28,33 @@ def ctrlc_handler(signal, frame):
 # Ctrl-C signal listener
 signal.signal(signal.SIGINT, ctrlc_handler)
 
+
 # The main loop
-for line in sys.stdin:
-    loop_counter += 1
+if sys.stdin.read() != "":
+    for line in sys.stdin:
+        loop_counter += 1
 
-    line_list = line.split()
+        line_list = line.split()
 
-    try:
-        status_code = int(line_list[-2])
-        if status_code in stats:
-            stats[status_code] += 1
-        else:
-            stats[status_code] = 1
-    except (e):
-        pass
+        try:
+            status_code = int(line_list[-2])
+            if status_code in stats:
+                stats[status_code] += 1
+            else:
+                stats[status_code] = 1
+        except (e):
+            pass
 
-    try:
-        file_size = int(line_list[-1])
-        file_size_counter += file_size
-    except (e):
-        pass
+        try:
+            file_size = int(line_list[-1])
+            file_size_counter += file_size
+        except (e):
+            pass
 
-    if loop_counter % 10 == 0 or line == "":
+        if loop_counter % 10 == 0 or line == "":
+            printer()
+
+    if loop_counter % 10 != 0:
         printer()
-
-if loop_counter % 10 != 0:
+else:
     printer()
