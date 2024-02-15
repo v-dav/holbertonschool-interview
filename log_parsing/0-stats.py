@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""A Log Parser Script"""
+""" A Log Parser Script
+"""
 
 import signal
 import sys
@@ -12,6 +13,8 @@ file_size_counter = 0
 
 # The function to print stats
 def printer():
+    """ Printer function
+    """
     print(f"File size: {file_size_counter}")
     for k, v in dict(sorted(stats.items())).items():
         print(f"{k}: {v}")
@@ -19,6 +22,8 @@ def printer():
 
 # Ctrl-C signal handler
 def ctrlc_handler(signal, frame):
+    """ Handler function
+    """
     printer()
 
 
