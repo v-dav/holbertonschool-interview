@@ -33,15 +33,22 @@ for line in sys.stdin:
     loop_counter += 1
 
     line_list = line.split()
-    status_code = int(line_list[7])
-    file_size = int(line_list[8])
 
-    if status_code in stats:
-        stats[status_code] += 1
-    else:
-        stats[status_code] = 1
+    try:
+        status_code = int(line_list[-2])
+        if status_code in stats:
+            stats[status_code] += 1
+        else:
+            stats[status_code] = 1
+    except (e):
+        pass
 
-    file_size_counter += file_size
+    try:
+        file_size = int(line_list[-1])
+        file_size_counter += file_size
+    except (e):
+        pass
+
     if loop_counter % 10 == 0 or line == "":
         printer()
 
