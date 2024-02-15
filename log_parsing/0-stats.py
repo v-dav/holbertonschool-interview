@@ -15,7 +15,7 @@ def printer():
     """ Affiche les informations nécessaires """
 
     print("File size: {}".format(file_size_counter))
-    for k, v in dict(sorted(stats.items())).items():
+    for k, v in sorted(stats.items()):
         print("{}: {}".format(k, v))
 
 
