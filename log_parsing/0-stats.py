@@ -19,6 +19,7 @@ def printer():
         print("{}: {}".format(k, v))
 
 
+# The Ctrl-C handler
 def ctrlc_handler(signal, frame):
     """ Handler function that detects the signal"""
     printer()
@@ -27,6 +28,7 @@ def ctrlc_handler(signal, frame):
 # Ctrl-C signal listener
 signal.signal(signal.SIGINT, ctrlc_handler)
 
+# The main loop
 for line in sys.stdin:
     loop_counter += 1
 
