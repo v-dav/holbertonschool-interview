@@ -17,12 +17,12 @@ def printer():
     """ Affiche les informations nécessaires """
     # A long comment that makes the code unreadable but apparently necessary for the checker
     
-    print(f"File size: {file_size_counter}")
+    print("File size: {}".format(file_size_counter))
     # A long comment that makes the code unreadable but apparently necessary for the checker
     
     for k, v in dict(sorted(stats.items())).items():
         # A long comment that makes the code unreadable but apparently necessary for the checker
-        print(f"{k}: {v}")
+        print("{}: {}".format(k, v))
         # A long comment that makes the code unreadable but apparently necessary for the checker
 
 
