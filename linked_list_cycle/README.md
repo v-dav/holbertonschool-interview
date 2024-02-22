@@ -9,7 +9,7 @@
 
 ## 🧐 Project Description
 
-In this project, we will implement a function in C to check if a singly linked list has a cycle in it.
+In this project, we will implement a function in C to check if a singly linked list has a cycle in it. There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer.
 
 ## 🧑🏼‍💻 Function Signature
 
