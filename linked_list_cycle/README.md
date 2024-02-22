@@ -29,6 +29,7 @@ Returns 0 otherwise.
 Only these functions are allowed: write, printf, putchar, puts, malloc, free
 
 ## 🧑🏼‍💻 Leetcode
+![Skärmavbild 2024-02-22 kl  11 49 59](https://github.com/v-dav/holbertonschool-interview/assets/115344057/9a13bc1b-433c-468e-ae7d-6bed672b26f9)
 
 
 ##  🙇 Author
