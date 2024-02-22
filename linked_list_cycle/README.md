@@ -3,6 +3,10 @@
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 
 
+<p align="center">
+  <img src="https://github.com/v-dav/holbertonschool-interview/assets/115344057/d73c7027-fd32-4fce-b6b8-321b9fac7167" alt="cycle">
+</p>
+
 ## 🧐 Project Description
 
 In this project, we will implement a function in C to check if a singly linked list has a cycle in it.
