@@ -26,36 +26,25 @@ Returns 1 if n is a palindrome and 0 otherwise.
 
 We are not allowed to allocate memory dynamically (malloc, calloc, …) for this exercice.
 
-## 🧑🏼‍💻 Leetcode solution with another approach
+## 🧑🏼‍💻 Leetcode
 ![Skärmavbild 2024-02-29 kl  15 33 52](https://github.com/v-dav/holbertonschool-interview/assets/115344057/248b5e0b-7ddf-4ac0-837c-43e7792681a2)
+
+## Alternative approach with still space complexity O(1)
 ```c
 int is_palindrome(unsigned long n)
 {
-	int divisor = 1;
-	int leading = 0;
-	int trailing = 0;
+	int reversed = 0, remainder;
+	original = n;
 
-	/* Find divisor to extract leading digit */
-	while (n / divisor >= 10)
-		divisor *= 10;
-
-	while (n != 0)
+	while (n)
 	{
-		/* find first and last digit */
-		leading = n / divisor;
-		trailing = n % 10;
-
-		/* check if palindrome */
-		if (leading != trailing)
-			return (0);
-
-		/* remove first and last number */
-		n = (n % divisor) / 10;
-
-		/* reduce divisor by 2 as 2 digits are removed */
-		divisor /= 100;
+		remainder = n % 10;
+		reversed = reversed * 10 + remainder;
+		n /= 10;
 	}
-	return (1);
+	if (original == reversed)
+		return (1);
+	return (0);
 }
 ```
 
