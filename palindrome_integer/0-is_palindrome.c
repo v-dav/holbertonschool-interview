@@ -10,16 +10,29 @@
  */
 int is_palindrome(unsigned long n)
 {
-	int remainder, reversed = 0;
-	int original = n;
+	unsigned long divisor = 1;
+	int leading = 0;
+	int trailing = 0;
 
-	while (n)
+	/* Find divisor to extract leading digit */
+	while (n / divisor >= 10)
+		divisor *= 10;
+
+	while (n != 0)
 	{
-		remainder = n % 10;
-		reversed = reversed * 10 + remainder;
-		n /= 10;
+		/* find first and last digit */
+		leading = n / divisor;
+		trailing = n % 10;
+
+		/* check if palindrome */
+		if (leading != trailing)
+			return (0);
+
+		/* remove first and last number */
+		n = (n % divisor) / 10;
+
+		/* reduce divisor by 2 as 2 digits are removed */
+		divisor /= 100;
 	}
-	if (original == reversed)
-		return (1);
-	return (0);
+	return (1);
 }
