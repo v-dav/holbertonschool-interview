@@ -14,23 +14,22 @@ int is_palindrome(unsigned long n)
 	int leading = 0;
 	int trailing = 0;
 
-	unsigned long long n_long = (unsigned long long)n;
 	/* Find divisor to extract leading digit */
-	while (n_long / divisor >= 10)
+	while (n / divisor >= 10)
 		divisor *= 10;
 
-	while (n_long != 0)
+	while (n != 0)
 	{
 		/* find first and last digit */
-		leading = n_long / divisor;
-		trailing = n_long % 10;
+		leading = n / divisor;
+		trailing = n % 10;
 
 		/* check if palindrome */
 		if (leading != trailing)
 			return (0);
 
 		/* remove first and last number */
-		n = (n_long % divisor) / 10;
+		n = (n % divisor) / 10;
 
 		/* reduce divisor by 2 as 2 digits are removed */
 		divisor /= 100;
