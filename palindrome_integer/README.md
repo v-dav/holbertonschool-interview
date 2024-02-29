@@ -26,7 +26,9 @@ Returns 1 if n is a palindrome and 0 otherwise.
 
 We are not allowed to allocate memory dynamically (malloc, calloc, …) for this exercice.
 
-## 🧑🏼‍💻 Leetcode
+## 🧑🏼‍💻 Leetcode solution with another approach
+![Skärmavbild 2024-02-29 kl  15 33 52](https://github.com/v-dav/holbertonschool-interview/assets/115344057/248b5e0b-7ddf-4ac0-837c-43e7792681a2)
+
 
 
 ##  🙇 Author
