@@ -11,16 +11,8 @@ def validUTF8(data):
 
     Returns: True if data is a valid UTF-8 encoding, else return False
     """
-
-    # Counter variable
     count = 0
-
     for int in data:
-        # If the count is 0, check how many leading 1's there are
-        # in the leading byte to determine how many bytes are expected
-        # for the current character.
-        if int > 255:
-            return False
         if count == 0:
             if (int >> 5) == 0b110:
                 count = 1
@@ -28,15 +20,10 @@ def validUTF8(data):
                 count = 2
             elif (int >> 3) == 0b11110:
                 count = 3
-            elif (int >> 7) != 0:
+            elif (int >> 7) == 1:
                 return False
-        # If the count is not 0, check if the current integer
-        # is a valid continuation byte
         else:
             if (int >> 6) != 0b10:
                 return False
             count -= 1
-
-    # If the count is still not 0 after iterating
-    # through all the integers, it is invalid
     return count == 0
