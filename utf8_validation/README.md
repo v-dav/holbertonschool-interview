@@ -1,11 +1,27 @@
-## UTF-8 validation
+# UTF-8 validation
+![Python](https://img.shields.io/badge/Python-Algorithms-blue?style=for-the-badge&logo=python&logoColor=white)
 
-![image](https://github.com/TessierV/holbertonschool-interview/assets/113889290/5a74f781-d1a1-4ba7-9ce4-100ff0aa69bd)
+![maxresdefault](https://github.com/v-dav/holbertonschool-interview/assets/115344057/55622d44-d823-436e-9a3e-601900629318)
 
-# Overview
+
+## 🧐 Project Overview
 This project is about writing an algorithm implementing a function that determines whether a given data set represents a valid UTF-8 encoding. UTF-8 is a character encoding capable of representing all possible characters, or code points, in Unicode. The goal is to validate whether a sequence of bytes, represented as a list of integers, adheres to the rules of UTF-8 encoding.
 
-# Test
+## Task Description
+
+
+
+```python
+def validUTF8(data)
+```
+
+- Return: True if data is a valid UTF-8 encoding, else return False
+- A character in UTF-8 can be 1 to 4 bytes long
+- The data set can contain multiple characters
+- The data will be represented by a list of integers
+- Each integer represents 1 byte of data, therefore you only need to handle the 8 least significant bits of each integer
+
+## Example
 
 ```#!/usr/bin/python3
 """
@@ -24,9 +40,13 @@ data = [229, 65, 127, 256]
 print(validUTF8(data))
 ```
 
-# Result
+## Result
 ```
 True
 True
 False
 ```
+
+##  🙇 Author
+
+[Vladimir Davidov](https://github.com/v-dav) - Holberton School
