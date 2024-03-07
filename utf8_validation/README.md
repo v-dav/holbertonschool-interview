@@ -47,6 +47,10 @@ True
 False
 ```
 
+## 🧑🏼‍💻 Leetcode
+![Skärmavbild 2024-03-07 kl  12 17 27](https://github.com/v-dav/holbertonschool-interview/assets/115344057/037f071f-3942-4018-9634-50c1e9aeda60)
+
+
 ##  🙇 Author
 
 [Vladimir Davidov](https://github.com/v-dav) - Holberton School
