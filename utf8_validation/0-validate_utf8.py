@@ -19,6 +19,8 @@ def validUTF8(data):
         # If the count is 0, check how many leading 1's there are
         # in the leading byte to determine how many bytes are expected
         # for the current character.
+        if int > 255:
+            return False
         if count == 0:
             if (int >> 5) == 0b110:
                 count = 1
