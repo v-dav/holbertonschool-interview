@@ -2,6 +2,9 @@
 
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 
+<p align="center">
+    <img src="https://github.com/v-dav/holbertonschool-interview/assets/115344057/b513d566-ced0-41ed-a719-ad6e78b59f82">
+</p>
 
 ## 🧐 Project Overview
 
