@@ -3,7 +3,7 @@
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 
 <p align="center">
-    <img src="">
+    <img src="https://github.com/v-dav/holbertonschool-interview/assets/115344057/be7ec5d3-9569-4c92-b7f3-7da346b2eefe">
 </p>
 
 ## 🧐 Project Overview
