@@ -1,6 +1,9 @@
 # N Queens
 ![Python](https://img.shields.io/badge/Python-Algorithms-blue?style=for-the-badge&logo=python&logoColor=white)
 
+![image](https://github.com/v-dav/holbertonschool-interview/assets/115344057/e961df3e-e350-4a39-be4a-48d008873f09)
+
+
 ## 🧐 Project Overview
 The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. This program solves the N queens problem.
 
