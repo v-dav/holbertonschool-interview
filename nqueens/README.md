@@ -54,6 +54,7 @@ The program prints every possible solution to the problem, with one solution per
 You are only allowed to import the sys module.
 
 ## 🧑🏼‍💻 Leetcode
+![Skärmavbild 2024-04-08 kl  15 38 33](https://github.com/v-dav/holbertonschool-interview/assets/115344057/aa7545bb-ce9d-4aea-a7c2-d9d57cc5ab36)
 
 
 ##  🙇 Author
