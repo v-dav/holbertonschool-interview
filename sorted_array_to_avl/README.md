@@ -2,6 +2,9 @@
 
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 
+<p align="center">
+    <img src='https://github.com/v-dav/holbertonschool-interview/assets/115344057/d0f418f4-7d32-4005-8d56-c6d152d61066'>
+</p>
 
 ## 🧐 Overview
 This project involves writing a function in C that constructs an AVL (Adelson-Velsky and Landis) tree from a sorted array. AVL trees are self-balancing binary search trees where the heights of the two child subtrees of any node differ by at most one.
