@@ -12,6 +12,7 @@
 avl_t *convert_to_bst(int *array, int beginning_index, int end_index)
 {
 	avl_t *new_node = NULL;
+	int middle_index = 0;
 
 	if (end_index < beginning_index)
 		return (NULL);
@@ -20,7 +21,7 @@ avl_t *convert_to_bst(int *array, int beginning_index, int end_index)
 	if (new_node == NULL)
 		return (NULL);
 
-	int middle_index = (beginning_index + end_index) / 2;
+	middle_index = (beginning_index + end_index) / 2;
 
 	new_node->n = array[middle_index];
 	new_node->left = convert_to_bst(array, beginning_index, middle_index - 1);
