@@ -44,6 +44,10 @@ int main(void)
 - [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree)
 - [Binary Trees](https://en.wikipedia.org/wiki/Binary_tree)
 
+## 🧑🏼‍💻 Leetcode:
+![Skärmavbild 2024-04-09 kl  14 53 18](https://github.com/v-dav/holbertonschool-interview/assets/115344057/7f35c645-73cc-4273-b9a0-84d06f86e9f1)
+
+
 ##  🙇 Author
 
 [Vladimir Davidov](https://github.com/v-dav) - Holberton School
