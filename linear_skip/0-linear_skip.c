@@ -3,8 +3,10 @@
 /**
  * linear_skip - searches for a value in a sorted skip list of integers
  *
- * @head: Pointer to the head node of the list
+ * @list: Pointer to the head node of the list
  * @value: the value to search for
+ *
+ * Return: a pointer to the node with the value
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
@@ -36,7 +38,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		while (search_pointer->next)
 			search_pointer = search_pointer->next;
 	}
-
 	printf("Value found between indexes [%lu] and [%lu]\n",
 	       list->index, search_pointer->index);
 
@@ -48,6 +49,5 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			return (list);
 		list = list->next;
 	}
-
 	return (NULL);
 }
