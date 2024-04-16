@@ -2,6 +2,9 @@
 
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 
+![image](https://github.com/v-dav/holbertonschool-interview/assets/115344057/561245c4-9946-4081-9cfc-457353ed27d6)
+
+
 ## 🧐 Overview
 In computer science, linear search is a straightforward algorithm for finding a target value within a list. However, when dealing with large sorted singly linked lists, linear search can become inefficient as it requires traversing every element in the list. To improve search performance, we can implement a skip list, which adds an "express lane" to the list to reduce the time complexity of searches.
 
