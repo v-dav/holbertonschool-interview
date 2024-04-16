@@ -75,9 +75,6 @@ Value checked at index [11] = [53]
 Found 53 at index: 11
 ```
 
-## 🧑🏼‍💻 Leetcode:
-
-
 ##  🙇 Author
 
 [Vladimir Davidov](https://github.com/v-dav) - Holberton School
