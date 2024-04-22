@@ -1,0 +1,16 @@
+{
+  "name": "starwars_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "0-starwars_characters.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2",
+    "semistandard": "^17.0.0"
+  }
+}
