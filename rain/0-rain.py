@@ -5,7 +5,7 @@
 def rain(walls):
     """The core algorithms of the rain computation
 
-    DOESN'T WORKING FOR "TETRIS LIKE" TOPOGRAPHY
+    DOESN'T WORK FOR "TETRIS LIKE" TOPOGRAPHY
 
     """
 
