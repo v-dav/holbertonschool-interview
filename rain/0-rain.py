@@ -3,35 +3,24 @@
 
 
 def rain(walls):
-    """The core algorithms of the rain computation"""
+    n = len(walls)
+    res = 0
 
-    total_area = 0
-    bottom_length = 0
-    left_wall = 0
-    right_wall = 0
+    # For every element of the array
+    for i in range(1, n - 1):
 
-    for index in range(len(walls)):
-        current_height = walls[index]
+        # Find the maximum element on its left
+        left = walls[i]
+        for j in range(i):
+            left = max(left, walls[j])
 
-        if current_height == 0:
-            if (index - 1) >= 0 and walls[index - 1] != 0:
-                left_wall = walls[index - 1]
+        # Find the maximum element on its right
+        right = walls[i]
 
-            if (index + 1) < len(walls):
-                right_wall = walls[index + 1]
-            if left_wall != 0:
-                height_left = left_wall
-                bottom_length += 1
+        for j in range(i + 1, n):
+            right = max(right, walls[j])
 
-                if right_wall != 0:
-                    height_right = right_wall
+        # Update the maximum walls
+        res = res + (min(left, right) - walls[i])
 
-                    if height_left and height_right:
-                        min_height = min(height_right, height_left)
-                        local_area = min_height * bottom_length
-                        total_area += local_area
-                        bottom_length = 0
-                        left_wall = 0
-                        right_wall = 0
-
-    return total_area
+    return res
