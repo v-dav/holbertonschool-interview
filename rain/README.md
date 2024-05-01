@@ -2,6 +2,10 @@
 
 ![Python](https://img.shields.io/badge/Python-3.9-blue)
 
+<p align="center">
+    <img src="https://github.com/v-dav/holbertonschool-interview/assets/115344057/4eb2b6f3-3406-451d-b6a1-bd85444b1da3">
+</p>
+
 This project implements an algorithm to calculate the amount of rainwater retained between walls represented by a list of non-negative integers.
 
 ## Project Description
