@@ -61,11 +61,12 @@ void buildHeap(int arr[], int N)
 {
 	/*Index of last non-leaf node*/
 	int startIdx = (N / 2) - 1;
+	int i;
 
 	/*Perform reverse level order traversal*/
 	/*from last non-leaf node and heapify*/
 	/*each node*/
-	for (int i = startIdx; i >= 0; i--)
+	for (i = startIdx; i >= 0; i--)
 	{
 		heapify(arr, N, i);
 	}
