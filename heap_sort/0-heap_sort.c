@@ -18,59 +18,35 @@ void swap(int *a, int *b)
 /**
  * heapify - heapify a subtree
  *
- * @arr: array to heapify
- * @i: index of the root node
- * @N: size of the array/heap
- * @old_size: the original arr size for printing
+ * @array: array to heapify
+ * @idx: index of the root node
+ * @size: size of the array/heap
+ * @calcsize: size of the array/heap
  *
  * Return: void
  */
-void heapify(int arr[], int N, int i, size_t old_size)
+void heapify(int *array, size_t size, size_t calcsize, int idx)
 {
 	/* Initialize largest as root*/
-	int largest = i;
-	int l = 2 * i + 1;
-	int r = 2 * i + 2;
+	int root = idx;
+	int left = 2 * idx + 1;
+	int right = 2 * idx + 2;
+	int n = (int)size;
 
 	/*If left child is larger than root*/
-	if (l < N && arr[l] > arr[largest])
-		largest = l;
+	if (left < n && array[left] > array[root])
+		root = left;
 
 	/*If right child is larger than largest so far*/
-	if (r < N && arr[r] > arr[largest])
-		largest = r;
+	if (right < n && array[right] > array[root])
+		root = right;
 
 	/* If largest is not root*/
-	if (largest != i)
+	if (root != idx)
 	{
-		swap(&arr[i], &arr[largest]);
-		print_array(arr, old_size);
-
-		/*Recursively heapify the affected sub-tree*/
-		heapify(arr, N, largest, old_size);
-	}
-}
-
-/**
- * buildHeap - Function to build a Max-Heap from the given array
- *
- * @arr: array to make max-heap from
- * @N: size of the array/heap
- *
- * Return: void
- */
-void buildHeap(int arr[], int N)
-{
-	/*Index of last non-leaf node*/
-	int startIdx = (N / 2) - 1;
-	int i;
-
-	/*Perform reverse level order traversal*/
-	/*from last non-leaf node and heapify*/
-	/*each node*/
-	for (i = startIdx; i >= 0; i--)
-	{
-		heapify(arr, N, i, N);
+		swap(&array[idx], &array[root]);
+		print_array(array, calcsize);
+		heapify(array, n, calcsize, root);
 	}
 }
 
@@ -86,15 +62,16 @@ void buildHeap(int arr[], int N)
 void heap_sort(int *array, size_t size)
 {
 	int i;
-	size_t old_size = size;
 
-	if (size < 2)
-		return;
+	/*Building max-heap*/
+	for (i = size / 2 - 1; i >= 0; i--)
+		heapify(array, size, size, i);
 
-	buildHeap(array, size);
-	for (i = size - 1; i >= 0; i--)
+	/*Sorting*/
+	for (i = size - 1; i > 0; i--)
 	{
 		swap(&array[0], &array[i]);
-		heapify(array, i, 0, old_size);
+		print_array(array, size);
+		heapify(array, i, size, 0);
 	}
 }
