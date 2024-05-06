@@ -43,6 +43,7 @@ void heapify(int arr[], int N, int i)
 	if (largest != i)
 	{
 		swap(&arr[i], &arr[largest]);
+		print_array(arr, N);
 
 		/*Recursively heapify the affected sub-tree*/
 		heapify(arr, N, largest);
@@ -92,7 +93,6 @@ void heap_sort(int *array, size_t size)
 	for (i = size - 1; i >= 0; i--)
 	{
 		swap(&array[0], &array[i]);
-		print_array(array, size);
 		heapify(array, i, 0);
 	}
 }
