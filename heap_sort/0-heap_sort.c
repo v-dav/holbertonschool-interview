@@ -21,10 +21,11 @@ void swap(int *a, int *b)
  * @arr: array to heapify
  * @i: index of the root node
  * @N: size of the array/heap
+ * @old_size: the original arr size for printing
  *
  * Return: void
  */
-void heapify(int arr[], int N, int i)
+void heapify(int arr[], int N, int i, size_t old_size)
 {
 	/* Initialize largest as root*/
 	int largest = i;
@@ -43,10 +44,10 @@ void heapify(int arr[], int N, int i)
 	if (largest != i)
 	{
 		swap(&arr[i], &arr[largest]);
-		print_array(arr, N);
+		print_array(arr, old_size);
 
 		/*Recursively heapify the affected sub-tree*/
-		heapify(arr, N, largest);
+		heapify(arr, N, largest, old_size);
 	}
 }
 
@@ -69,7 +70,7 @@ void buildHeap(int arr[], int N)
 	/*each node*/
 	for (i = startIdx; i >= 0; i--)
 	{
-		heapify(arr, N, i);
+		heapify(arr, N, i, N);
 	}
 }
 
@@ -85,6 +86,7 @@ void buildHeap(int arr[], int N)
 void heap_sort(int *array, size_t size)
 {
 	int i;
+	size_t old_size = size;
 
 	if (size < 2)
 		return;
@@ -93,6 +95,6 @@ void heap_sort(int *array, size_t size)
 	for (i = size - 1; i >= 0; i--)
 	{
 		swap(&array[0], &array[i]);
-		heapify(array, i, 0);
+		heapify(array, i, 0, old_size);
 	}
 }
