@@ -42,10 +42,10 @@ int recursive_part(int *array, int start, int end, int value)
 	if (array[middle] == value && array[middle - 1] != value)
 		return (middle);
 
-	if (array[middle] >= value)
+	if (array[middle] > value)
 		return (recursive_part(array, start, middle, value));
 
-	if (array[middle] <= value)
+	if (array[middle] < value)
 		return (recursive_part(array, middle + 1, end, value));
 
 	return (-1);
