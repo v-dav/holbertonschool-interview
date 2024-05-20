@@ -4,6 +4,9 @@ This project contains a recursive function that queries the Reddit API to parse 
 
 ![Python](https://img.shields.io/badge/Python-blue?style=for-the-badge&logo=python&logoColor=white)
 
+![image](https://github.com/v-dav/holbertonschool-interview/assets/115344057/c89897ca-0298-4ba5-a373-c17ff807adaf)
+
+
 ## 🧐 Project Overview
 
 The `count_words` function queries the Reddit API, retrieves the titles of hot articles from a specified subreddit, and counts the occurrences of provided keywords. The results are printed in descending order based on the count of occurrences, with ties broken alphabetically. The function handles case-insensitive keywords and merges counts for duplicate keywords in the list.
