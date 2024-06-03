@@ -8,11 +8,8 @@ import os
 import requests
 
 
-# Initialize counter dictionary
-counter_dictionary = {}
 
-
-def count_words(subreddit, word_list, after=None, print_results=True):
+def count_words(subreddit, word_list, after=None, print_results=True, counter_dictionary=None):
     """
     Args:
             subreddit (str): subreddit to query
@@ -29,6 +26,10 @@ def count_words(subreddit, word_list, after=None, print_results=True):
         word_list is None or
             word_list == []):
         return
+
+    # Initialize counter dictionary if it's the first call
+    if counter_dictionary is None:
+        counter_dictionary = {}
 
     # Fetching data
     url_access = f'https://reddit.com/r/{subreddit}/hot.json'
@@ -53,10 +54,10 @@ def count_words(subreddit, word_list, after=None, print_results=True):
     # Go to next data batch
     after = data.get('after')
     if after:
-        count_words(subreddit, word_list, after, print_results=False)
+        count_words(subreddit, word_list, after, print_results=False, counter_dictionary=counter_dictionary)
 
     # Print formatted counter dictionary
     if print_results:
-        for keyword in counter_dictionary:
+        for keyword in sorted(counter_dictionary, key=counter_dictionary.get, reverse=True):
             if counter_dictionary[keyword] != 0:
                 print(f'{keyword}: {counter_dictionary[keyword]}')
