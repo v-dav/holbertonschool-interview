@@ -8,46 +8,55 @@ import os
 import requests
 
 
-def count_words(subreddit, word_list):
+# Initialize counter dictionary
+counter_dictionary = {}
+
+
+def count_words(subreddit, word_list, after=None, print_results=True):
     """
     Args:
             subreddit (str): subreddit to query
             word_list (list of str): the list of keywords to count
+            after (str): the after parameter for pagination
+            print_results (bool): flag to print results after recursion
 
-    Returns:
-            nothing;
+    Returns: nothing
     """
-    
+
     # Basic validation
-    if (subreddit is None or 
+    if (subreddit is None or
         subreddit == "" or
         word_list is None or
-        word_list == []):
-            return
-    
-    # Getting API credentials
-    # secret = os.environ["SECRET"]
-    # personal_id = os.environ["PERSONAL_ID"]
-    
-    # url = "https://www.reddit.com/api/v1/access_token"
-    # auth = requests.auth.HTTPBasicAuth(personal_id, secret)
-    # headers_access = {"Content-Type": 'application/x-www-form-urlencoded', "User-Agent": "Vladimir_Davidov"}
-    # data_access = 'grant_type=client_credentials'
-    
-    # token = requests.post(url, auth=auth, data=data_access, headers=headers_access)
-    # access_token = token.json()['access_token']
-    
-    # Get the data
-    # fetch_data_headers = {"User-Agent": "Vladimir_Davidov", "Authorization": access_token}
-    
+            word_list == []):
+        return
+
     # Fetching data
     url_access = f'https://reddit.com/r/{subreddit}/hot.json'
-    response = requests.get(url_access)
-    
+    params = {'after': after} if after else {}
+    response = requests.get(url_access, params=params)
+
     if response.status_code != 200:
         return
- 
-    data = response.json()["data"]['children']
-    
-    for thread in data:
-        print("---" + thread['data']['title'])
+
+    data = response.json()["data"]
+
+    # Word list to lowercase and check if kw in title
+    for keyword in word_list:
+        keyword = keyword.lower()
+        if keyword not in counter_dictionary:
+            counter_dictionary[keyword] = 0
+
+        for thread in data['children']:
+            if keyword in thread['data']['title'].lower():
+                counter_dictionary[keyword] += 1
+
+    # Go to next data batch
+    after = data.get('after')
+    if after:
+        count_words(subreddit, word_list, after, print_results=False)
+
+    # Print formatted counter dictionary
+    if print_results:
+        for keyword in counter_dictionary:
+            if counter_dictionary[keyword] != 0:
+                print(f'{keyword}: {counter_dictionary[keyword]}')
