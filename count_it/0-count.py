@@ -19,7 +19,8 @@ def count_words(subreddit, word_list, after='', count={}):
     """
 
     # Fetching data
-    response = requests.get("https://www.reddit.com/r/{}/hot.json".format(subreddit),
+    response = requests.get("https://www.reddit.com/r/{}/hot.json"
+                            .format(subreddit),
                             headers={'User-agent': 'Mozilla/5.0'},
                             params={'after': after},
                             allow_redirects=False)
@@ -28,7 +29,7 @@ def count_words(subreddit, word_list, after='', count={}):
         return
 
     data = response.json().get('data')
-    
+
     # Counting and formatting count dictionary
     for thread in data.get('children'):
         title = thread.get('data').get('title').lower()
