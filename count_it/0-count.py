@@ -6,13 +6,13 @@ and prints a sorted count of given keywords
 
 import requests
 
-def count_words(subreddit, word_list, after=None, print_results=True, counter_dictionary=None):
+
+def count_words(subreddit, word_list, after=None, counter_dictionary=None):
     """
     Args:
         subreddit (str): subreddit to query
         word_list (list of str): the list of keywords to count
         after (str): the after parameter for pagination
-        print_results (bool): flag to print results after recursion
         counter_dictionary (dict): dictionary to keep track of counts
 
     Returns: nothing
@@ -31,11 +31,10 @@ def count_words(subreddit, word_list, after=None, print_results=True, counter_di
     params = {'after': after} if after else {}
     headers = {'User-agent': 'Mozilla/5.0'}
 
-    try:
-        response = requests.get(url_access, params=params, headers=headers)
-        response.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching data from Reddit: {e}")
+    response = requests.get(url_access, params=params,
+                            headers=headers, allow_redirects=False)
+
+    if response.status_code != 200:
         return
 
     data = response.json().get("data", {})
@@ -43,20 +42,24 @@ def count_words(subreddit, word_list, after=None, print_results=True, counter_di
     # Word list to lowercase and check if keyword is in title
     for keyword in word_list:
         keyword = keyword.lower()
-        if keyword not in counter_dictionary:
-            counter_dictionary[keyword] = 0
 
         for thread in data.get('children', []):
-            if keyword in thread['data']['title'].lower():
-                counter_dictionary[keyword] += 1
+            title = thread.get("data", {}).get("title", "").lower()
+            occurrence = title.split().count(keyword)
+            if occurrence > 0:
+                if keyword not in counter_dictionary:
+                    counter_dictionary[keyword] = occurrence
+                else:
+                    counter_dictionary[keyword] += occurrence
 
     # Go to next data batch
     after = data.get('after')
     if after:
-        count_words(subreddit, word_list, after, print_results=False, counter_dictionary=counter_dictionary)
+        return count_words(subreddit, word_list, after,
+                           counter_dictionary=counter_dictionary)
+    else:
+        if len(counter_dictionary) == 0:
+            return
 
-    # Print formatted counter dictionary only if it's the top level call
-    if print_results:
-        for keyword in sorted(counter_dictionary, key=counter_dictionary.get, reverse=True):
-            if counter_dictionary[keyword] != 0:
-                print(f'{keyword}: {counter_dictionary[keyword]}')
+        for key, value in sorted(counter_dictionary.items(), key=lambda kv: (-kv[1], kv[0])):
+            print('{}: {}'.format(key, value))
