@@ -55,7 +55,7 @@ char *allocate_and_initialize(unsigned int length)
  */
 int main(int argc, char **argv)
 {
-	int digit1_idx, digit2_idx, length1, length2, total_length;
+	int digit1_idx, digit2_idx, length1, length2, total_length, addition;
 	int multiply, carry, digit_carry, temp_location, leading_zeros = 0;
 	char *result;
 
@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 				       (argv[2][digit2_idx] - '0') +
 				   carry;
 			carry = multiply / 10;
-			int addition = (result[temp_location] - '0') +
+			addition = (result[temp_location] - '0') +
 				       (multiply % 10) + digit_carry;
 			digit_carry = addition / 10;
 			result[temp_location] = (addition % 10) + '0';
