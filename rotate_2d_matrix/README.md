@@ -2,8 +2,9 @@
 
 ![Python](https://img.shields.io/badge/Python-blue?style=for-the-badge&logo=python&logoColor=white)
 
-![image](https://github.com/v-dav/holbertonschool-interview/assets/115344057/719c8086-76e3-401a-bd5d-a3fbbe7d7db7)
-
+<p align="center">
+  <img src="https://github.com/v-dav/holbertonschool-interview/assets/115344057/719c8086-76e3-401a-bd5d-a3fbbe7d7db7" alt="cycle">
+</p>
 
 ## Project Overview
 
