@@ -14,6 +14,11 @@ This project provides a Python function to rotate an n x n 2D matrix 90 degrees 
 
 The function `rotate_2d_matrix(matrix)` takes a square matrix (list of lists) as an input and rotates it 90 degrees clockwise. The transformation is performed in-place, meaning that the original matrix is directly modified and no additional matrix is created.
 
+<p align="center">
+  <img src="https://github.com/v-dav/holbertonschool-interview/assets/115344057/1c8d80bb-76ae-48ff-ae86-0c1eab589444" alt="cycle">
+</p>
+
+
 ## How to Use
 
 To use the rotate function, simply import and pass a matrix to it. Here's a quick example to demonstrate:
