@@ -1,5 +1,7 @@
 # Merge Sort Algorithm
 
+![C Programming](https://img.shields.io/badge/C%20Programming-gray?style=for-the-badge&logo=c&logoColor=white)
+
 Implementing the merge sort algorithm to sort an array of integers in ascending order. Merge sort is a sorting technique that uses a divide-and-conquer strategy to efficiently sort data. The function, `merge_sort`, will take an array of integers and its size as parameters and will sort the array in-place.
 
 ## Function Prototype
@@ -44,6 +46,5 @@ The time complexity for the Merge Sort algorithm is detailed in the file `0-O`:
 
 - The Merge Sort algorithm is a classic example used in numerous computer science courses and textbooks to teach efficient sorting techniques.
 
-![C Programming](https://img.shields.io/badge/C%20Programming-gray?style=for-the-badge&logo=c&logoColor=white)
 
 ```
