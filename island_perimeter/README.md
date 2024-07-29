@@ -2,6 +2,9 @@
 
 ![Python Badge](https://img.shields.io/badge/Python-Programming-green)
 
+![image](https://github.com/user-attachments/assets/10f56445-997c-4cf2-8af7-fd406915aabf)
+
+
 ## Project Description
 
 This project involves writing a function `island_perimeter(grid)` that calculates the perimeter of an island represented in a grid. The grid is a list of lists of integers where `0` represents water and `1` represents land. The function computes the perimeter by analyzing the grid and counting the edges of the land cells that contribute to the perimeter.
