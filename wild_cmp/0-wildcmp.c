@@ -1,13 +1,13 @@
 #include "holberton.h"
 
 /**
- * strcmp - compare two strings
+ * __strcmp - compare two strings
  * @str1: string
  * @str2: string
  *
  * Return: 1 if they are "equal", 0 otherwise.
  */
-int strcmp(char *str1, char *str2)
+int _strcmp(char *str1, char *str2)
 {
 
 	if (*str2 == '*')
@@ -22,7 +22,7 @@ int strcmp(char *str1, char *str2)
 	}
 	if (*str1 == *str2)
 	{
-		return (strcmp(str1 + 1, str2 + 1));
+		return (_strcmp(str1 + 1, str2 + 1));
 	}
 	return (0);
 }
@@ -37,8 +37,8 @@ int strcmp(char *str1, char *str2)
 int starbranch(char *s1, char *star)
 {
 	if (*s1 == '\0')
-		return (strcmp(s1, star));
-	return (strcmp(s1, star) || starbranch(s1 + 1, star));
+		return (_strcmp(s1, star));
+	return (_strcmp(s1, star) || starbranch(s1 + 1, star));
 }
 
 
@@ -51,5 +51,5 @@ int starbranch(char *s1, char *star)
  */
 int wildcmp(char *s, char *s2)
 {
-	return (strcmp(s, s2));
+	return (_strcmp(s, s2));
 }

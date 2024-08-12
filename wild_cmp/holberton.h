@@ -3,6 +3,6 @@
 
 int wildcmp(char *s1, char *s2);
 int starbranch(char *, char *);
-int strcmp(char *str1, char *str2);
+int _strcmp(char *str1, char *str2);
 
 #endif
