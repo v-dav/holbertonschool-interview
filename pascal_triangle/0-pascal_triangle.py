@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Module to generate Pascal's Triangle.
-"""
+# 0-pascal_triangle.py
 
 
 def pascal_triangle(n):
