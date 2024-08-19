@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-# 0-pascal_triangle.py
+"""
+Defines function that returns a list of integers
+representing the pascal's triangle of n
+"""
+
+
 def pascal_triangle(n):
     """
     Generates Pascal's Triangle up to the nth row.
