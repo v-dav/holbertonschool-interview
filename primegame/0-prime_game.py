@@ -3,7 +3,16 @@
 
 
 def isWinner(x, nums):
-    """Determines the winner of the prime game"""
+    """
+    Determines the winner of the prime game.
+    
+    Args:
+        x (int): The number of rounds.
+        nums (list): A list of n for each round.
+    
+    Returns:
+        str: Name of the winner (Maria or Ben) or None.
+    """
     if x <= 0 or nums is None:
         return None
     if x != len(nums):
