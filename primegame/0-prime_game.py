@@ -5,7 +5,7 @@ representing the pascal's triangle of n
 '''
 
 
-def isWinner(x, nums):
+def pascal_triangle(n):
     '''
     Generates Pascal's Triangle up to the nth row.
 
@@ -20,40 +20,17 @@ def isWinner(x, nums):
         >>> pascal_triangle(5)
         [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
     '''
-    
-    if x <= 0 or nums is None:
-        return None
-    if x != len(nums):
-        return None
 
-    ben = 0
-    maria = 0
-    a = [1 for x in range(sorted(nums)[-1] + 1)]
-    a[0], a[1] = 0, 0
+    if n <= 0:
+        return []
 
-    for i in range(2, len(a)):
-        rm_multiples(a, i)
+    triangle = [[1]]
 
-    for i in nums:
-        if sum(a[0:i + 1]) % 2 == 0:
-            ben += 1
-        else:
-            maria += 1
+    for i in range(1, n):
+        row = [1]
+        for j in range(1, i):
+            row.append(triangle[i-1][j-1] + triangle[i-1][j])
+        row.append(1)
+        triangle.append(row)
 
-    if ben > maria:
-        return "Ben"
-    if maria > ben:
-        return "Maria"
-    return None
-
-
-def rm_multiples(ls, x):
-    '''
-    Removes multiples of a prime number
-    '''
-    
-    for i in range(2, len(ls)):
-        try:
-            ls[i * x] = 0
-        except (ValueError, IndexError):
-            break
+    return triangle
