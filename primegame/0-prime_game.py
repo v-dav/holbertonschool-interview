@@ -1,34 +1,47 @@
 #!/usr/bin/python3
-""" Function Prime Game """
+'''Prime game module'''
 
 
 def isWinner(x, nums):
-    """Prime Game"""
-    if not nums or x < 1:
+    '''Determines the winner of the prime game.
+    
+    Args:
+        x (int): The number of rounds.
+        nums (list): A list of n for each round.
+    
+    Returns:
+        str: Name of the winner (Maria or Ben) or None.'''
+    
+    if x <= 0 or nums is None:
         return None
-    n = max(nums)
-    sieve = [True for _ in range(max(n + 1, 2))]
-    for i in range(2, int(pow(n, 0.5)) + 1):
-        if not sieve[i]:
-            continue
-        for j in range(i * i, n + 1, i):
-            sieve[j] = False
+    if x != len(nums):
+        return None
 
-    sieve[0] = sieve[1] = False
-    c = 0
-    for i in range(len(sieve)):
-        if sieve[i]:
-            c += 1
-        sieve[i] = c
+    ben = 0
+    maria = 0
+    a = [1 for x in range(sorted(nums)[-1] + 1)]
+    a[0], a[1] = 0, 0
 
-    winner = ""
-    player1 = 0
-    for n in nums:
-        player1 += sieve[n] % 2 == 1
-    if player1 * 2 == len(nums):
-        winner = None
-    if player1 * 2 > len(nums):
-        winner = "Maria"
-    else:
-        winner = "Ben"
-    return winner
+    for i in range(2, len(a)):
+        rm_multiples(a, i)
+
+    for i in nums:
+        if sum(a[0:i + 1]) % 2 == 0:
+            ben += 1
+        else:
+            maria += 1
+
+    if ben > maria:
+        return "Ben"
+    if maria > ben:
+        return "Maria"
+    return None
+
+
+def rm_multiples(ls, x):
+    '''Removes multiples of a prime number'''
+    for i in range(2, len(ls)):
+        try:
+            ls[i * x] = 0
+        except (ValueError, IndexError):
+            break
