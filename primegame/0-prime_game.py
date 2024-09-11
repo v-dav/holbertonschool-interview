@@ -1,36 +1,34 @@
 #!/usr/bin/python3
-'''
-Defines function that returns a list of integers
-representing the pascal's triangle of n
-'''
+""" Function Prime Game """
 
 
-def pascal_triangle(n):
-    '''
-    Generates Pascal's Triangle up to the nth row.
+def isWinner(x, nums):
+    """Prime Game"""
+    if not nums or x < 1:
+        return None
+    n = max(nums)
+    sieve = [True for _ in range(max(n + 1, 2))]
+    for i in range(2, int(pow(n, 0.5)) + 1):
+        if not sieve[i]:
+            continue
+        for j in range(i * i, n + 1, i):
+            sieve[j] = False
 
-    Args:
-        n (int): The number of rows in Pascal's triangle to generate.
+    sieve[0] = sieve[1] = False
+    c = 0
+    for i in range(len(sieve)):
+        if sieve[i]:
+            c += 1
+        sieve[i] = c
 
-    Returns:
-        List[List[int]]: list of lists of ints representing Pascal's triangle.
-                         Each inner list represents a row of the triangle.
-
-    Example:
-        >>> pascal_triangle(5)
-        [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
-    '''
-
-    if n <= 0:
-        return []
-
-    triangle = [[1]]
-
-    for i in range(1, n):
-        row = [1]
-        for j in range(1, i):
-            row.append(triangle[i-1][j-1] + triangle[i-1][j])
-        row.append(1)
-        triangle.append(row)
-
-    return triangle
+    winner = ""
+    player1 = 0
+    for n in nums:
+        player1 += sieve[n] % 2 == 1
+    if player1 * 2 == len(nums):
+        winner = None
+    if player1 * 2 > len(nums):
+        winner = "Maria"
+    else:
+        winner = "Ben"
+    return winner
