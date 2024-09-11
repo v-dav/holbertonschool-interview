@@ -1,17 +1,24 @@
 #!/usr/bin/python3
-'''Prime game module'''
+'''
+Defines function that returns a list of integers
+representing the pascal's triangle of n
+'''
 
 
 def isWinner(x, nums):
     '''
-    Determines the winner of the prime game.
-    
+    Generates Pascal's Triangle up to the nth row.
+
     Args:
-        x (int): The number of rounds.
-        nums (list): A list of n for each round.
-    
+        n (int): The number of rows in Pascal's triangle to generate.
+
     Returns:
-        str: Name of the winner (Maria or Ben) or None.
+        List[List[int]]: list of lists of ints representing Pascal's triangle.
+                         Each inner list represents a row of the triangle.
+
+    Example:
+        >>> pascal_triangle(5)
+        [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
     '''
     
     if x <= 0 or nums is None:
@@ -41,7 +48,10 @@ def isWinner(x, nums):
 
 
 def rm_multiples(ls, x):
-    '''Removes multiples of a prime number'''
+    '''
+    Removes multiples of a prime number
+    '''
+    
     for i in range(2, len(ls)):
         try:
             ls[i * x] = 0
