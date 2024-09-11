@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Prime game module"""
+'''Prime game module'''
 
 
 def isWinner(x, nums):
-    """
+    '''
     Determines the winner of the prime game.
     
     Args:
@@ -12,7 +12,8 @@ def isWinner(x, nums):
     
     Returns:
         str: Name of the winner (Maria or Ben) or None.
-    """
+    '''
+    
     if x <= 0 or nums is None:
         return None
     if x != len(nums):
@@ -40,7 +41,7 @@ def isWinner(x, nums):
 
 
 def rm_multiples(ls, x):
-    """Removes multiples of a prime number"""
+    '''Removes multiples of a prime number'''
     for i in range(2, len(ls)):
         try:
             ls[i * x] = 0
